@@ -21,9 +21,10 @@ class InvalidToken(Exception):
         super().__init__(self.message)
 
 class Svaeva:
+    
+    load_dotenv()
 
     def __init__(self,api_key : str,end_point_="http://127.0.0.1:8000") -> None:
-        load_dotenv()
         # Set The Global Variables
         self.token = api_key
         self.conn  = Session()
