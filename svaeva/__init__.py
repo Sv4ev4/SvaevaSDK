@@ -21,7 +21,7 @@ class InvalidToken(Exception):
         super().__init__(self.message)
 
 class Svaeva:
-    
+
     load_dotenv()
 
     def __init__(self,api_key : str,end_point_="http://127.0.0.1:8000") -> None:
@@ -29,7 +29,10 @@ class Svaeva:
         self.token = api_key
         self.conn  = Session()
         # Check
-        self.end_point(end_point_)
+        if api_key == "" and end_point_ == "http://127.0.0.1:8000":
+            self.end_point(end_point_)
+        else:
+            self.end = end_point_
         self.set_headres
         self.check
     def end_point(self, end_):
