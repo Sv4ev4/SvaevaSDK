@@ -12,7 +12,7 @@ from svaeva.Paths.User import Users
 import os
 
 # Setting up logging
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(filename='svaeva.log',level=logging.INFO)
 
 class InvalidToken(Exception):
     def __init__(self, token, message="Invalid token"):
