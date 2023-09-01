@@ -4,11 +4,11 @@ from requests import Session
 from dotenv import load_dotenv
 
 
-from Paths.Actions    import Actions 
-from Paths.Present    import PresentModels
-from Paths.Platform   import Platforms
-from Paths.Group      import Groups
-from Paths.User       import Users
+from svaeva.Paths.Actions    import Actions 
+from svaeva.Paths.Present    import PresentModels
+from svaeva.Paths.Platform   import Platforms
+from svaeva.Paths.Group      import Groups
+from svaeva.Paths.User       import Users
 
 import os
 
