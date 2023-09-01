@@ -43,10 +43,10 @@ class Svaeva:
 
     def end_point(self,end_):
         # Set
-        token = os.getenv("SVAEVA_KEY")
+        token = os.getenv("KEY_SVAEVA")
         if token is not None:
             self.token  = token
-        end   = os.getenv("SVAEVA_URL")
+        end   = os.getenv("URL_SVAEVA")
         if end is not None:
             self.end = end
         else:
