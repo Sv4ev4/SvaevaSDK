@@ -33,13 +33,13 @@ class Svaeva:
         self.check
     def end_point(self, end_):
         # Set
-        token = os.getenv("KEY_SVAEVA")
+        token = os.getenv("APIKEY_SVAEVA")
         if token is not None:
             self.token = token
             logging.info(f"Environment variable KEY_SVAEVA: {token}")
         else:
             logging.warning("Environment variable KEY_SVAEVA not found.")
-        end = os.getenv("URL_SVAEVA")
+        end = os.getenv("APIURL_SVAEVA")
         if end is not None:
             self.end = end
             logging.info(f"Environment variable URL_SVAEVA: {end}")
