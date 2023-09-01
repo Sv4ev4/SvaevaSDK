@@ -41,13 +41,17 @@ class Svaeva:
         self.set_headres
         self.check
 
-    def end_point(self,end):
+    def end_point(self,end_):
         # Set
-        env_load = os.getenv("SVAEVA_KEY")
-        if env_load is not None:
-            end  = env_load
-        # End Point
-        self.end = end
+        token = os.getenv("SVAEVA_KEY")
+        if token is not None:
+            self.token  = token
+        end   = os.getenv("SVAEVA_URL")
+        if end is not None:
+            self.end = end
+        else:
+            self.end = end_
+
 
     @property
     def set_headres(self):
