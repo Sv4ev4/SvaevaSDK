@@ -25,7 +25,7 @@ def create_random_present_model_dict():
 
 # Exemple
 
-svaeva = Svaeva("a60d6079937e941411018fcd31638418ce37c555585cf949bfdfde4d1ca3c974392176eab57d64747f12852ac02822b4c840df90caab4479e010bee481697303")
+svaeva = Svaeva("a60d6079937e941411018fcd31638418ce37c555585cf949bfdfde4d1ca3c974392176eab57d64747f12852ac02822b4c840df90caab4479e010bee481697303","http://192.168.1.205:8000")
 
 # To setted PresentModels
 svaeva.present.ola = create_random_present_model_dict()
