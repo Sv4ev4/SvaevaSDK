@@ -69,7 +69,7 @@ class PresentModels:
     # Update a present model
     def update(self, kwarg_ : Dict):
         try:
-            self.conn.put(self.url, json=kwarg_)
+            self.conn.put(self.url, data=kwarg_)
         except Exception as e:
             raise e
         

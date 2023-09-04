@@ -40,7 +40,7 @@ present_ = create_random_present_model_dict()
 present_["id"] = "test"
 # Present
 print("present")
-svaeva.present.update(**present_)
+svaeva.present.update(present_)
 try:
     print(svaeva.present.not_setted)
 except Exception as e:
