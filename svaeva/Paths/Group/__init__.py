@@ -70,7 +70,7 @@ class Groups:
     # Update a platform
     def update(self, **kwargs):
         try:
-            self.conn.put(self.url, headers=kwargs)
+            self.conn.put(self.url, json={"update_rest":kwargs})
         except Exception as e:
             raise e
         

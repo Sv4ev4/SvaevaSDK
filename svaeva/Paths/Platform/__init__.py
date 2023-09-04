@@ -70,7 +70,7 @@ class Platforms:
     # Update a platform
     def update(self, **kwargs):
         try:
-            self.conn.put(self.url, params={"platform_id":kwargs["id"]}, headers=kwargs)
+            self.conn.put(self.url, json={"platform_id":kwargs["id"], "platform":kwargs})
         except Exception as e:
             raise e
         

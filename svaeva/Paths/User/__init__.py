@@ -79,7 +79,7 @@ class Users:
     # Update a user
     def update(self, **kwargs):
         try:
-            self.conn.put(self.url, params={"user":kwargs["id"]}, headers=kwargs)
+            self.conn.put(self.url, json={"user":kwargs})
         except Exception as e:
             raise e
         
