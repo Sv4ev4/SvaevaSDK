@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, Dict
 from requests import Session
 
 # Custom exception for when the present is empty
@@ -67,7 +67,7 @@ class PresentModels:
         return None
     
     # Update a present model
-    def update(self, **kwarg_):
+    def update(self, kwarg_ : Dict):
         try:
             self.conn.put(self.url, json=kwarg_)
         except Exception as e:
