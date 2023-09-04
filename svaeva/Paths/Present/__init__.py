@@ -67,9 +67,9 @@ class PresentModels:
         return None
     
     # Update a present model
-    def update(self, **kwargs):
+    def update(self, **kwarg_):
         try:
-            self.conn.put(self.url, data=kwargs)
+            self.conn.put(self.url, data=kwarg_)
         except Exception as e:
             raise e
         
