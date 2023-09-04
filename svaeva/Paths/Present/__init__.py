@@ -1,5 +1,10 @@
+import logging
 from typing import Any, Dict
 from requests import Session
+
+# Set up logging
+logging.basicConfig(filename='app.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 # Custom exception for when the present is empty
 class PresentIsEmpty(Exception):
@@ -34,6 +39,7 @@ class PresentModels:
             if data.json()["detail"] == 'Not Found':
                 raise PresentIsEmpty()
         except Exception as e:
+            logger.error(e)
             raise e
     
     # Get a specific present model by name
@@ -49,6 +55,7 @@ class PresentModels:
                 else:
                     raise InvalidPresentModelID()
             except Exception as e:
+                logger.error(e)
                 raise e
 
     # Set a present model
@@ -61,6 +68,7 @@ class PresentModels:
                     raise ErrorSettingPresentModel(data.json())
                 self.__dict__[name] = value  
             except Exception as e:
+                logger.error(e)
                 raise e
         else:
             self.__dict__[name] = value
@@ -71,6 +79,8 @@ class PresentModels:
         try:
             self.conn.put(self.url, data=kwarg_)
         except Exception as e:
+            logger.error(e)
+            logger.error(kwarg_)
             raise e
         
     @property
@@ -82,5 +92,5 @@ class PresentModels:
         try:
             self.conn.delete(self.url, params={"id":name})
         except Exception as e:
+            logger.error(e)
             raise e
-
