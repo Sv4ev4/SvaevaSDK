@@ -69,7 +69,7 @@ class PresentModels:
     # Update a present model
     def update(self, **kwargs):
         try:
-            self.conn.put(self.url, params={"item_id":kwargs["id"]}, body=kwargs)
+            self.conn.put(self.url, params={"item_id":kwargs["id"]}, headers=kwargs)
         except Exception as e:
             raise e
         
