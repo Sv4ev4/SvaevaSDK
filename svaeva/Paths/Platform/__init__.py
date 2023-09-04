@@ -70,7 +70,7 @@ class Platforms:
     # Update a platform
     def update(self, **kwargs):
         try:
-            self.conn.put(self.url, data=kwargs)
+            self.conn.put(self.url, json=kwargs)
         except Exception as e:
             raise e
         

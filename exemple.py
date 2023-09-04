@@ -10,7 +10,7 @@ def create_random_present_model_dict():
         'present_type': random.choice(['conversation', 'analysis']),
         'agent_type': 'default',
         'llm_type': 'openai',
-        'model': random.choice(['gpt-1', 'gpt-2', 'gpt-3', 'gpt-4']),
+        'model': random.choice(['gpt-3.5-turbo', 'gpt-4']),
         'max_tokens': random.randint(1, 100),
         'temperature': round(random.uniform(0, 1), 2),
         'presence_penalty': round(random.uniform(0, 1), 2),
@@ -36,6 +36,11 @@ print(svaeva.present())
 print(svaeva.present.ola)
 print(svaeva.present.test)
 # Test Error
+present_ = create_random_present_model_dict()
+present_["id"] = "test"
+# Present
+print("present")
+svaeva.present.update(**present_)
 try:
     print(svaeva.present.not_setted)
 except Exception as e:

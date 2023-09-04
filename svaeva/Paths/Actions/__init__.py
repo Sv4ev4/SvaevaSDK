@@ -79,7 +79,7 @@ class Actions:
     # Update a user
     def update(self, **kwargs):
         try:
-            self.conn.put(self.url, data={"action_info":kwargs})
+            self.conn.put(self.url, json=kwargs)
         except Exception as e:
             raise e
         
