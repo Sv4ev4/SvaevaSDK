@@ -77,9 +77,9 @@ class Users:
         return None
     
     # Update a user
-    def update(self, **kwargs):
+    def update(self, kwarg_ : Dict):
         try:
-            self.conn.put(self.url, json=kwargs)
+            self.conn.put(self.url, json=kwarg_)
         except Exception as e:
             raise e
         

@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, Dict
 from requests import Session
 
 # Custom exception for when the platform is empty
@@ -68,9 +68,9 @@ class Groups:
         return None
     
     # Update a platform
-    def update(self, **kwargs):
+    def update(self, kwarg_ : Dict):
         try:
-            self.conn.put(self.url, json=kwargs)
+            self.conn.put(self.url, json=kwarg_)
         except Exception as e:
             raise e
         
