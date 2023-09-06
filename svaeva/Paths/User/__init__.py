@@ -26,7 +26,7 @@ class Users:
         self.url = f"{end_point}/v1/db/users/"
 
     # Call method to get all users
-    def __call__(self, *args: Any, **kwds: Any) -> Any:
+    def __call__(self, args: Any = None, **kwds: Any) -> Any:
         if isinstance(args, Dict):
             try:
                 data = self.conn.get(self.url,params=args)
