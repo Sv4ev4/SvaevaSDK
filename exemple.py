@@ -62,4 +62,9 @@ print(svaeva.platform.loaded)
 svaeva.group.test = {"conversation_present_id":"ola"}
 # Show all
 print(svaeva.group())
-# 
+# create one exemple to the users
+users = svaeva.users()
+for _ in users:
+    print(_)
+    print(svaeva.users(args={"group":_["group_id"]}))
+    #print(svaeva.users(args={"platform":_.platform,"arg:}))

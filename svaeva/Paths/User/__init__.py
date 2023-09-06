@@ -26,8 +26,8 @@ class Users:
         self.url = f"{end_point}/v1/db/users/"
 
     # Call method to get all users
-    def __call__(self, args: Any = None, **kwds: Any) -> Any:
-        if isinstance(args, Dict):
+    def __call__(self, args = None, **kwds: Any) -> Any:
+        if args is not None:
             try:
                 data = self.conn.get(self.url,params=args)
                 if data.status_code == 200:
@@ -37,6 +37,7 @@ class Users:
             except Exception as e:
                 raise e
         else:
+            print("not Dict")
             try:
                 data = self.conn.get(self.url)
                 if data.status_code == 200:
@@ -45,7 +46,7 @@ class Users:
                     raise UserIsEmpty()
             except Exception as e:
                 raise e
-    
+
     # Get a specific user by name
     def __getattr__(self, name):
         if name in self.__dict__:
