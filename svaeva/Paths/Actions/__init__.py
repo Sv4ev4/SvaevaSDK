@@ -26,8 +26,8 @@ class Actions:
         self.url = f"{end_point}/v1/db/action/"
 
     # Call method to get all users
-    def __call__(self, *args: Any, **kwds: Any) -> Any:
-        if isinstance(args, Dict):
+    def __call__(self,  args = None, **kwds: Any) -> Any:
+        if not isinstance(args, None):
             try:
                 data = self.conn.get(self.url,params=args)
                 if data.status_code == 200:
