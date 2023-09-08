@@ -31,7 +31,7 @@ class Groups:
             data = self.conn.get(self.url)
             if data.status_code == 200:
                 return data.json()
-            print(data)
+            #print(data)
             if data.json()["detail"] == 'Not Found':
                 raise PlatformIsEmpty()
         except Exception as e:

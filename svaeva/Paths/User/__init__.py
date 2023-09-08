@@ -37,7 +37,6 @@ class Users:
             except Exception as e:
                 raise e
         else:
-            print("not Dict")
             try:
                 data = self.conn.get(self.url)
                 if data.status_code == 200:
