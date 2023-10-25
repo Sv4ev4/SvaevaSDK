@@ -2,7 +2,6 @@
 
 ## Introduction
 
-
 ## Installation
 
 ## Documentation
@@ -228,6 +227,7 @@ To set a platform, use the following code:
 
 ```python
 """
+    Possible arguments:
     {
         "combination": [
             "phone_number",
@@ -354,4 +354,12 @@ Actions are used to manage the actions preformed in your platform. The svaeva SD
 
 #### Usage
 
-Overall, the `Skeleton` component of the `svaeva` package provides a powerful set of tools for managing virtual agents and interacting with them using a flexible API. By loading and managing skeletons, developers can create sophisticated virtual agent systems that can interact with users in a variety of ways.
+To list all available actions, use the following code:
+
+```python
+client.action()
+```
+
+To list a specific action by ID, use the following code:
+
+skeleton normalized
